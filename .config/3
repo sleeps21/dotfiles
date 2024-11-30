@@ -1,0 +1,180 @@
+// Import Colors
+@import "/home/sleeps/.cache/wal/colors.scss";
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+* {
+  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
+  border: none;
+  border-radius: 0px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 5px solid $color1;
+  background: rgba($color1, 0, 7);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+/* -----------------------------------------------------
+  Center
+ * ----------------------------------------------------- */
+#workspaces {
+  background: $color1;
+  margin: 5px 0px 5px 0px;
+  font-weight: bold;
+  font-style: normal;
+  opacity: 0.8;
+  font-size: 12px;
+  color: $background;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  margin: 4px 3px;
+  border-radius: 15px;
+  border: 0px;
+  color: $background;
+  min-width: 20px;
+  background-color: $background;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+#workspaces button.active {
+  color: $foreground;
+  background: $foreground;
+  border-radius: 15px;
+  min-width: 60px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: $foreground;
+  background: $foreground;
+  border-radius: 15px;
+  opacity: 0.7;
+}
+
+/* -----------------------------------------------------
+ * Left
+ * ----------------------------------------------------- */
+#window,
+#custom-appmenu {
+  background: $color1;
+  padding: 0px 10px 0px 10px;
+  margin: 5px 0px 5px 0px;
+  color: $foreground;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+#window {
+  padding-top: 7px;
+}
+
+// #custom-appmenuwlr {
+//   padding-bottom: 4px;
+// }
+
+/* -----------------------------------------------------
+ * Right
+ * ----------------------------------------------------- */
+#clock,
+#network,
+#battery,
+#custom-exit {
+  background: $color1;
+  margin: 5px 0px 5px 0px;
+  margin-left: 10px;
+  color: $foreground;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+#clock {
+  padding-top: 1px;
+}
+
+#custom-exit {
+  // border-right: 3px solid $foreground;
+  margin-right: 10px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+#battery {
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: $color7;
+  background-color: $color1;
+}
+
+@keyframes blink {
+  to {
+    background-color: $color1;
+    color: $color7;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: $color1;
+  color: red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
+}
+
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
+}
+
+#custom-filemanager {
+  background-color: $color1;
+  font-size: 16px;
+  color: $color7;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px;
+  margin: 3px 15px 3px 15px;
+  opacity: 0.8;
+  border: 3px solid $color10;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+#tray {
+  padding: 0px 15px 0px 0px;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+}

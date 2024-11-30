@@ -1,0 +1,5 @@
+wallpaper/
+.tmux/plugins/minimal-tmux-status
+.tmux/plugins/tmux
+.tmux/plugins/tpm
+.tmux/plugins/vim-tmux-navigator
