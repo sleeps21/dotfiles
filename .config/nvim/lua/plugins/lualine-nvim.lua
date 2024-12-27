@@ -1,5 +1,3 @@
--- Status line
-
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
@@ -11,9 +9,11 @@ return {
     options = {
 
       icons_enabled = true,
-      theme = "pywal16-nvim",
+      -- theme = "pywal16-nvim",
+      theme = "colors-nvim",
       component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      -- section_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = {},
         winbar = {},
@@ -28,21 +28,27 @@ return {
       },
     },
     sections = {
-      lualine_a = { "mode" },
-      lualine_b = { "branch", "diff", "diagnostics" }, --"diff", "diagnostics" },
-      lualine_c = { { "filename", path = 1 } },
-      lualine_x = { "filetype" },                   -- "encoding", "fileformat",
-      lualine_y = { "progress" },
-      lualine_z = { "location" },
-    },
-    inactive_sections = {
-      lualine_a = {},
+      lualine_a = {
+        "mode",
+        "branch",
+        "diagnostics",
+        { "filename", path = 1 },
+        "fileytype",
+        "progress",
+        "location",
+      },
       lualine_b = {},
-      lualine_c = { "filename" },
-      lualine_x = { "location" },
+      -- lualine_b = { "branch", "", "diagnostics" }, --"diff", "diagnostics" },
+      lualine_c = {},
+      -- lualine_c = { { "filename", path = 1 } },
+      -- lualine_x = { "filetype" }, -- "encoding", "fileformat",
+      lualine_x = {}, -- "encoding", "fileformat",
       lualine_y = {},
+      -- lualine_y = { "progress" },
+      -- lualine_z = { "location" },
       lualine_z = {},
     },
+    inactive_sections = {},
     tabline = {},
     winbar = {},
     inactive_winbar = {},

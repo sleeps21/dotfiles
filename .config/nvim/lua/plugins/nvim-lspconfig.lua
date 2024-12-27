@@ -17,17 +17,13 @@ return {
         "html",
         "emmet_language_server",
         "cssls",
-
         -- Formats
         "jsonls",
-
         -- Lua development
         "lua_ls",
-
         -- Python development
         "pyright",
         "ruff_lsp",
-
         -- C/C++ development
         "clangd",
       },

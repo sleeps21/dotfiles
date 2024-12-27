@@ -1,5 +1,6 @@
 // Import Colors
 @import "/home/sleeps/.cache/wal/colors.scss"
+// @import "/home/sleeps/.cache/hellwal/waybar-colors.scss"
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
@@ -13,8 +14,8 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.5);
-  background: rgba($background, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  background: rgba($background, 0.7);
   transition-property: background-color;
   transition-duration: 0.5s;
 }

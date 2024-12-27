@@ -28,10 +28,9 @@ if [ -n "$selection" ]; then
   done
 
   wal -a 92 -i "$background" -n
-
   $HOME/.config/scripts/launch_waybar.sh
   $HOME/.config/scripts/change_ob_theme.sh
-  fd "nvim\..*\.0" "$XDG_RUNTIME_DIR" | xargs -I {} nvim --server {} --remote-send ":colorscheme pywal16<CR>"
+  fd "nvim\..*\.0" "$XDG_RUNTIME_DIR" | xargs -I {} nvim --server {} --remote-send ":colorscheme colors<CR>"
   pywalfox update
   $HOME/.config/scripts/change_rofi_theme.sh
   $HOME/.config/scripts/change_wlogout_theme.sh

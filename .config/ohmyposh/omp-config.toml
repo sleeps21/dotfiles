@@ -1,38 +1,70 @@
-version = 2
-final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
-import = ["~/.cache/wal/colors.toml"]
+version = 3
+final_space = true
 
+[palette]
+  color0 = 'black'
+  color1 = 'red'
+  color10 = 'bright_green'
+  color11 = 'bright_yellow'
+  color12 = 'bright_blue'
+  color13 = 'bright_magenta'
+  color14 = 'bright_cyan'
+  color15 = 'bright_white'
+  color2 = 'green'
+  color3 = 'yellow'
+  color4 = 'blue'
+  color5 = 'magenta'
+  color6 = 'cyan'
+  color7 = 'white'
+  color8 = 'bright_black'
+  color9 = 'bright_red'
+
+[secondary_prompt]
+  template = '❯❯ '
+  foreground = 'foreground'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '❯ '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}p:color2{{end}}', '{{if eq .Code 0}}p:color9{{end}}']
 
 [[blocks]]
-  type      = 'prompt'
+  type = 'prompt'
   alignment = 'left'
-  newline   = true
+  newline = true
 
   [[blocks.segments]]
-  foreground = "p:color1"
-  style = "plain"
-  template = " \u279c"
-  type = "text"
+    template = ' ➜'
+    foreground = 'p:color1'
+    type = 'text'
+    style = 'plain'
 
-  [[blocks.segments]]
-  style        = "plain"
-  template     = " {{ .Path }}"
-  type         = "path"
-  foreground   = "p:color4"
-  background   = "transparent"
-  
     [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = ' {{ .Path }}'
+    foreground = 'p:color4'
+    background = 'transparent'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
       style = 'folder'
 
   [[blocks.segments]]
-    type = 'git'
-    style = 'plain'
+    template = ' <p:color4>git:(</>{{ .HEAD }}<p:color4>)</>'
     foreground = 'p:color9'
     background = 'transparent'
-    template = " <p:color4>git:(</>{{ .HEAD }}<p:color4>)</>"
+    type = 'git'
+    style = 'plain'
+
     [blocks.segments.properties]
       branch_icon = ''
+      cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
 
@@ -41,29 +73,28 @@ import = ["~/.cache/wal/colors.toml"]
   alignment = 'right'
 
   [[blocks.segments]]
-  type = "python"
-  style = "powerline"
-  foreground = "p:color7"
-  background = "transparent"
-  fetch_virtual_env = true
-  display_default = true
-  template = "  {{ .Venv }} "
+    template = '  {{ .Venv }} '
+    foreground = 'p:color7'
+    background = 'transparent'
+    type = 'python'
+    style = 'powerline'
 
-
-
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
+    template = '{{ .FormattedMs }}'
     foreground = 'p:color8'
     background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    type = 'executiontime'
+    style = 'plain'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       threshold = 5000
 
 [[blocks]]
@@ -72,44 +103,11 @@ import = ["~/.cache/wal/colors.toml"]
   newline = true
 
   [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = [
-      "{{if gt .Code 0}}p:color9{{end}}",
-      "{{if eq .Code 0}}p:color10{{end}}",
-    ]
-    background = 'transparent'
-    template = '❯'
+    foreground_templates = ['{{if gt .Code 0}}p:color9{{end}}', '{{if eq .Code 0}}p:color10{{end}}']
 
-[transient_prompt]
-  foreground_templates = [
-
-      "{{if gt .Code 0}}p:color2{{end}}",
-      "{{if eq .Code 0}}p:color9{{end}}",
-  ]
-  background = 'transparent'
-  template = '❯ '
-
-[secondary_prompt]
-  foreground = 'foreground'
-  background = 'transparent'
-  template = '❯❯ '
-
-
-[palette]
-color0  = "black"       # black
-color1  = "red"         # red
-color2  = "green"       # green
-color3  = "yellow"      # yellow
-color4  = "blue"        # blue
-color5  = "magenta"     # magenta
-color6  = "cyan"        # cyan
-color7  = "white"       # white
-color8  = "bright_black" # bright black
-color9  = "bright_red"  # bright red
-color10 = "bright_green" # bright green
-color11 = "bright_yellow" # bright yellow
-color12 = "bright_blue" # bright blue
-color13 = "bright_magenta" # bright magenta
-color14 = "bright_cyan" # bright cyan
-color15 = "bright_white" # bright white
+    [blocks.segments.properties]
+      cache_duration = 'none'

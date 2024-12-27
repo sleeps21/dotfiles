@@ -15,20 +15,21 @@ return {
       sources = {
         -- Web development
         -- HTML
-        null_ls.builtins.formatting.prettier,
-        -- CSS
-        null_ls.builtins.formatting.stylelint,
+        -- null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.stylelint,
 
         -- Lua formatting
         null_ls.builtins.formatting.stylua,
+
         -- Python formatting
         null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+
         -- Python diagnostics
-        null_ls.builtins.diagnostics.mypy.with({
-          extra_args = mypy_extra_args,
-        }),
-        -- Django
+        -- null_ls.builtins.diagnostics.mypy.with({
+        --   extra_args = mypy_extra_args,
+        -- }),
+        -- -- Django
         null_ls.builtins.diagnostics.djlint,
         null_ls.builtins.formatting.djlint,
 
