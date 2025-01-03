@@ -28,7 +28,7 @@ final_space = true
 [transient_prompt]
   template = '❯ '
   background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}p:color2{{end}}', '{{if eq .Code 0}}p:color9{{end}}']
+  foreground_templates = ['{{if gt .Code 0}}p:color14{{end}}', '{{if eq .Code 0}}p:color14{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -37,7 +37,7 @@ final_space = true
 
   [[blocks.segments]]
     template = ' ➜'
-    foreground = 'p:color1'
+    foreground = 'p:color14'
     type = 'text'
     style = 'plain'
 
@@ -46,18 +46,18 @@ final_space = true
 
   [[blocks.segments]]
     template = ' {{ .Path }}'
-    foreground = 'p:color4'
+    foreground = 'p:color14'
     background = 'transparent'
     type = 'path'
     style = 'plain'
 
     [blocks.segments.properties]
       cache_duration = 'none'
-      style = 'folder'
+      style = 'full'
 
   [[blocks.segments]]
-    template = ' <p:color4>git:(</>{{ .HEAD }}<p:color4>)</>'
-    foreground = 'p:color9'
+    template = ' <p:color15>git:(</>{{ .HEAD }}<p:color15>)</>'
+    foreground = 'p:color15'
     background = 'transparent'
     type = 'git'
     style = 'plain'
@@ -74,7 +74,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '  {{ .Venv }} '
-    foreground = 'p:color7'
+    foreground = 'p:color14'
     background = 'transparent'
     type = 'python'
     style = 'powerline'
@@ -88,7 +88,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .FormattedMs }}'
-    foreground = 'p:color8'
+    foreground = 'p:color14'
     background = 'transparent'
     type = 'executiontime'
     style = 'plain'
@@ -107,7 +107,7 @@ final_space = true
     background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = ['{{if gt .Code 0}}p:color9{{end}}', '{{if eq .Code 0}}p:color10{{end}}']
+    foreground_templates = ['{{if gt .Code 0}}p:color14{{end}}', '{{if eq .Code 0}}p:color14{{end}}']
 
     [blocks.segments.properties]
       cache_duration = 'none'

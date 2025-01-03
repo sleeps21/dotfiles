@@ -23,7 +23,7 @@ import = ["~/.cache/wal/colors.toml"]
   background   = "transparent"
   
     [blocks.segments.properties]
-      style = 'folder'
+      style = 'full'
 
   [[blocks.segments]]
     type = 'git'

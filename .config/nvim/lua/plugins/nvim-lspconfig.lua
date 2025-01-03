@@ -23,7 +23,7 @@ return {
         "lua_ls",
         -- Python development
         "pyright",
-        "ruff_lsp",
+        "ruff",
         -- C/C++ development
         "clangd",
       },

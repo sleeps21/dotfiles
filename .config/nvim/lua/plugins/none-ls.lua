@@ -17,6 +17,8 @@ return {
         -- HTML
         -- null_ls.builtins.formatting.prettier,
         -- null_ls.builtins.formatting.stylelint,
+        -- JSON
+        null_ls.builtins.formatting.prettier,
 
         -- Lua formatting
         null_ls.builtins.formatting.stylua,

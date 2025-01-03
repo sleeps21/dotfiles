@@ -1,6 +1,6 @@
 // Import Colors
-@import "/home/sleeps/.cache/wal/colors.scss"
-// @import "/home/sleeps/.cache/hellwal/waybar-colors.scss"
+// @import "/home/sleeps/.cache/wal/colors.scss";
+@import "/home/sleeps/.cache/hellwal/colors.scss"
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
@@ -15,7 +15,7 @@
 
 window#waybar {
   background-color: rgba(0, 0, 0, 0);
-  background: rgba($background, 0.7);
+  background: rgba(black, 0.67);
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -24,13 +24,13 @@ window#waybar {
   Center
  * ----------------------------------------------------- */
 #workspaces {
-  background: rgba($color14, 0);
+  background: rgba($color1, 0);
   margin: 5px 0px 5px 0px;
   font-weight: bold;
   font-style: normal;
   opacity: 1;
   font-size: 12px;
-  color: rgba($color14, 0);
+  color: rgba($color1, 0);
   // color: $background;
 }
 
@@ -39,16 +39,16 @@ window#waybar {
   margin: 4px 3px;
   border-radius: 15px;
   border: 0px;
-  color: rgba($color14, 0.7);
+  color: rgba($color1, 0.7);
   min-width: 20px;
-  background-color: rgba($color14, 1);
+  background-color: rgba($color1, 1);
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: rgba($color1, 0);
-  background: rgba($color1, 1);
+  color: rgba($color14, 0);
+  background: rgba($color14, 1);
   border-radius: 15px;
   min-width: 60px;
   transition: all 0.3s ease-in-out;
@@ -56,7 +56,7 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: rgba($color15, 0);
+  color: rgba($color4, 0);
   background: rgba($foreground, 0.7);
   // color: $foreground;
   // background: $foreground;
@@ -70,10 +70,10 @@ window#waybar {
 #window,
 #custom-appmenu {
   // background: $color1;
-  background: rgba($color1, 0);
+  background: rgba($color14, 0);
   padding: 0px 10px 0px 10px;
   margin: 5px 0px 5px 0px;
-  color: $color1;
+  color: $color14;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
@@ -98,7 +98,7 @@ window#waybar {
   background: rgba($color1, 0);
   margin: 5px 0px 5px 0px;
   margin-left: 10px;
-  color: $color1;
+  color: $color14;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
