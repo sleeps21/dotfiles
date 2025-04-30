@@ -1,3 +1,6 @@
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
 * {
   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   border: none;
@@ -5,23 +8,27 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  background: rgba(0, 0, 0, 0.67);
-  transition-property: background-color;
+  background-color: transparent;
+  background: transparent;
   transition-duration: 0.5s;
+  opacity: 1;
 }
 
 /* -----------------------------------------------------
   Center
  * ----------------------------------------------------- */
 #workspaces {
-  background: rgba(122, 39, 58, 0);
-  margin: 5px 0px 5px 0px;
+  background: #5908ad;
+  margin: 10px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
   font-weight: bold;
   font-style: normal;
-  opacity: 1;
   font-size: 12px;
-  color: rgba(122, 39, 58, 0);
+  opacity: 1;
+  border: solid;
+  border-radius: 20px;
+  border-color: #8e11ff;
+  border-width: 5px;
 }
 
 #workspaces button {
@@ -29,25 +36,25 @@ window#waybar {
   margin: 4px 3px;
   border-radius: 15px;
   border: 0px;
-  color: rgba(122, 39, 58, 0.7);
-  min-width: 20px;
-  background-color: #7a273a;
+  color: rgba(112, 10, 220, 0.7);
+  min-width: 15px;
+  background-color: #700adc;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: rgba(112, 141, 221, 0);
-  background: #708ddd;
+  color: rgba(146, 96, 225, 0);
+  background: #9260e1;
   border-radius: 15px;
-  min-width: 60px;
+  min-width: 40px;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button:hover {
-  color: rgba(136, 52, 111, 0);
-  background: rgba(228, 237, 255, 0.7);
+  color: rgba(114, 14, 212, 0);
+  background: rgba(255, 205, 255, 0.7);
   border-radius: 15px;
   opacity: 0.7;
 }
@@ -56,18 +63,40 @@ window#waybar {
  * Left
  * ----------------------------------------------------- */
 #window,
-#custom-appmenu {
-  background: rgba(112, 141, 221, 0);
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
-  color: #708ddd;
+#custom-appmenu,
+#user {
+  margin: 10px 0px 5px 0px;
+  background: #5908ad;
+  color: #9260e1;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
+}
+
+#custom-appmenu {
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px 0px 0px 20px;
+  border-left: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
 }
 
 #window {
-  padding-top: 7px;
+  border-radius: 0px 20px 20px 0px;
+  padding-right: 20px;
+  border-right: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
+}
+
+#user {
+  padding-right: 20px;
 }
 
 /* -----------------------------------------------------
@@ -75,23 +104,25 @@ window#waybar {
  * ----------------------------------------------------- */
 #clock,
 #network,
-#battery,
-#custom-exit {
-  background: rgba(122, 39, 58, 0);
-  margin: 5px 0px 5px 0px;
-  margin-left: 10px;
-  color: #708ddd;
+#battery {
+  margin: 10px 0px 5px 0px;
+  padding-right: 10px;
+  background: #5908ad;
+  color: #9260e1;
   font-size: 16px;
   font-weight: bold;
-  opacity: 1;
+  border-top: solid;
+  border-bottom: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
 }
 
 #clock {
-  padding-top: 1px;
-}
-
-#custom-exit {
-  margin-right: 10px;
+  margin-right: 20px;
+  border-radius: 0px 20px 20px 0px;
+  border-right: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
 }
 
 /* -----------------------------------------------------
@@ -99,24 +130,28 @@ window#waybar {
  * ----------------------------------------------------- */
 #battery {
   padding-left: 10px;
-  padding-top: 2px;
+  padding-right: 20px;
+  border-radius: 20px 0px 0px 20px;
+  border-left: solid;
+  border-color: #8e11ff;
+  border-width: 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #7a273a;
-  background: rgba(122, 39, 58, 0);
+  color: #9260e1;
+  background-color: #5908ad;
 }
 
 @keyframes blink {
   to {
-    background-color: #7a273a;
-    color: #e4edff;
+    background-color: #5908ad;
+    color: #ffcdff;
   }
 }
 #battery.critical:not(.charging) {
-  background-color: #7a273a;
-  color: #7a273a;
+  background-color: #5908ad;
+  color: #5908ad;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -126,28 +161,6 @@ window#waybar {
 
 window#waybar.empty #window {
   background-color: transparent;
-}
-
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-
-#custom-filemanager {
-  background-color: #7a273a;
-  font-size: 16px;
-  color: #e4edff;
-  border-radius: 15px;
-  padding: 0px 10px 0px 10px;
-  margin: 3px 15px 3px 15px;
-  opacity: 0.8;
-  border: 3px solid #1b528f;
 }
 
 /*# sourceMappingURL=style.css.map */

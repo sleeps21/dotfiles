@@ -26,6 +26,9 @@ return {
         "ruff",
         -- C/C++ development
         "clangd",
+
+        --Rust development
+        "rust_analyzer",
       },
     })
 

@@ -15,6 +15,19 @@ vim.opt.rtp:prepend(lazypath)
 
 -- This has to be set before initializing lazy
 vim.g.mapleader = " "
+
+-- Vimtex
+-- Viewer options
+vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_general_viewer = "okular"
+vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
+
+-- Compiler backend
+vim.g.vimtex_compiler_method = "latexmk"
+
+-- Local leader
+vim.g.maplocalleader = ","
+
 -- Initialize lazy with dynamic loading of anything in the plugins directory
 require("lazy").setup("plugins", {
   change_detection = {

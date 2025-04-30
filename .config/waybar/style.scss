@@ -1,11 +1,11 @@
 // Import Colors
 // @import "/home/sleeps/.cache/wal/colors.scss";
-@import "/home/sleeps/.cache/hellwal/colors.scss"
+
+@import "/home/sleeps/.cache/hellwal/colors.scss";
+
 /* -----------------------------------------------------
  * General 
  * ----------------------------------------------------- */
-;
-
 * {
   font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
     sans-serif;
@@ -14,24 +14,27 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  background: rgba(black, 0.67);
-  transition-property: background-color;
+  background-color: transparent;
+  background: transparent;
   transition-duration: 0.5s;
+  opacity: 1;
 }
 
 /* -----------------------------------------------------
   Center
  * ----------------------------------------------------- */
 #workspaces {
-  background: rgba($color1, 0);
-  margin: 5px 0px 5px 0px;
+  background: rgba($color1, 1);
+  margin: 10px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
   font-weight: bold;
   font-style: normal;
-  opacity: 1;
   font-size: 12px;
-  color: rgba($color1, 0);
-  // color: $background;
+  opacity: 1;
+  border: solid;
+  border-radius: 20px;
+  border-color: $color12;
+  border-width: 5px;
 }
 
 #workspaces button {
@@ -39,9 +42,9 @@ window#waybar {
   margin: 4px 3px;
   border-radius: 15px;
   border: 0px;
-  color: rgba($color1, 0.7);
-  min-width: 20px;
-  background-color: rgba($color1, 1);
+  color: rgba($color10, 0.7);
+  min-width: 15px;
+  background-color: rgba($color10, 1);
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
@@ -50,7 +53,7 @@ window#waybar {
   color: rgba($color14, 0);
   background: rgba($color14, 1);
   border-radius: 15px;
-  min-width: 60px;
+  min-width: 40px;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
@@ -58,8 +61,6 @@ window#waybar {
 #workspaces button:hover {
   color: rgba($color4, 0);
   background: rgba($foreground, 0.7);
-  // color: $foreground;
-  // background: $foreground;
   border-radius: 15px;
   opacity: 0.7;
 }
@@ -68,49 +69,71 @@ window#waybar {
  * Left
  * ----------------------------------------------------- */
 #window,
-#custom-appmenu {
-  // background: $color1;
-  background: rgba($color14, 0);
-  padding: 0px 10px 0px 10px;
-  margin: 5px 0px 5px 0px;
+#custom-appmenu,
+#user {
+  margin: 10px 0px 5px 0px;
+  background: $color1;
   color: $color14;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
+
+  border-top: solid;
+  border-bottom: solid;
+  border-color: $color12;
+  border-width: 5px;
+}
+
+#custom-appmenu {
+  margin-left: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px 0px 0px 20px;
+
+  border-left: solid;
+  border-color: $color12;
+  border-width: 5px;
 }
 
 #window {
-  padding-top: 7px;
+  border-radius: 0px 20px 20px 0px;
+  padding-right: 20px;
+
+  border-right: solid;
+  border-color: $color12;
+  border-width: 5px;
 }
 
-// #custom-appmenuwlr {
-//   padding-bottom: 4px;
-// }
+#user {
+  padding-right: 20px;
+}
 
 /* -----------------------------------------------------
  * Right
  * ----------------------------------------------------- */
 #clock,
 #network,
-#battery,
-#custom-exit {
-  // background: $color1;
-  background: rgba($color1, 0);
-  margin: 5px 0px 5px 0px;
-  margin-left: 10px;
+#battery {
+  margin: 10px 0px 5px 0px;
+  padding-right: 10px;
+  background: $color1;
   color: $color14;
   font-size: 16px;
   font-weight: bold;
-  opacity: 1;
+
+  border-top: solid;
+  border-bottom: solid;
+  border-color: $color12;
+  border-width: 5px;
 }
 
 #clock {
-  padding-top: 1px;
-}
+  margin-right: 20px;
+  border-radius: 0px 20px 20px 0px;
 
-#custom-exit {
-  // border-right: 3px solid $foreground;
-  margin-right: 10px;
+  border-right: solid;
+  border-color: $color12;
+  border-width: 5px;
 }
 
 /* -----------------------------------------------------
@@ -118,14 +141,17 @@ window#waybar {
  * ----------------------------------------------------- */
 #battery {
   padding-left: 10px;
-  padding-top: 2px;
+  padding-right: 20px;
+  border-radius: 20px 0px 0px 20px;
+  border-left: solid;
+  border-color: $color12;
+  border-width: 5px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: $color1;
-  background: rgba($color1, 0);
-  // background-color: $color1;
+  color: $color14;
+  background-color: $color1;
 }
 
 @keyframes blink {
@@ -147,26 +173,4 @@ window#waybar {
 
 window#waybar.empty #window {
   background-color: transparent;
-}
-
-/* -----------------------------------------------------
- * Modules
- * ----------------------------------------------------- */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
-}
-
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
-}
-
-#custom-filemanager {
-  background-color: $color1;
-  font-size: 16px;
-  color: $foreground;
-  border-radius: 15px;
-  padding: 0px 10px 0px 10px;
-  margin: 3px 15px 3px 15px;
-  opacity: 0.8;
-  border: 3px solid $color10;
 }
