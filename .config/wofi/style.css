@@ -1,33 +1,33 @@
 #window {
   margin: 0px;
-  border: 2px solid #8e11ff;
+  border: 2px solid #bcb660;
   border-radius: 8px;
-  background-color: rgba(23, 2, 58, 0.5);
+  background-color: rgba(5, 13, 4, 0.5);
   font-family: SpaceMono Nerd Font;
   font-size: 17px;
 }
 
 #input {
   margin: 5px;
-  border: 1px solid #720ed4;
-  background-color: #5908ad;
-  color: #ffcdff;
+  border: 1px solid #97924d;
+  background-color: #567551;
+  color: #ffffe5;
 }
 
 #input image {
-  color: #5908ad;
+  color: #567551;
 }
 
 #inner-box {
   margin: 4px;
   border: none;
-  background-color: rgba(89, 8, 173, 0);
+  background-color: rgba(86, 117, 81, 0);
 }
 
 #outer-box {
   margin: 4px;
   border: none;
-  background-color: rgba(89, 8, 173, 0.5);
+  background-color: rgba(86, 117, 81, 0.5);
 }
 
 #scroll {
@@ -38,16 +38,16 @@
 #text {
   margin: 4px;
   border: none;
-  color: #ffcdff;
+  color: #ffffe5;
 }
 
 #entry:selected {
-  background-color: #5a08b0;
+  background-color: #739160;
   font-weight: normal;
 }
 
 #text:selected {
-  background-color: #5a08b0;
+  background-color: #739160;
   font-weight: normal;
 }
 

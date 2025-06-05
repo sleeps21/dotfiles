@@ -18,7 +18,7 @@ window#waybar {
   Center
  * ----------------------------------------------------- */
 #workspaces {
-  background: #5908ad;
+  background: #567551;
   margin: 10px 5px 5px 5px;
   padding: 5px 5px 5px 5px;
   font-weight: bold;
@@ -27,7 +27,7 @@ window#waybar {
   opacity: 1;
   border: solid;
   border-radius: 20px;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
@@ -36,16 +36,16 @@ window#waybar {
   margin: 4px 3px;
   border-radius: 15px;
   border: 0px;
-  color: rgba(112, 10, 220, 0.7);
+  color: rgba(143, 181, 120, 0.7);
   min-width: 15px;
-  background-color: #700adc;
+  background-color: #8fb578;
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: rgba(146, 96, 225, 0);
-  background: #9260e1;
+  color: rgba(218, 230, 112, 0);
+  background: #dae670;
   border-radius: 15px;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
@@ -53,8 +53,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: rgba(114, 14, 212, 0);
-  background: rgba(255, 205, 255, 0.7);
+  color: rgba(151, 146, 77, 0);
+  background: rgba(255, 255, 229, 0.7);
   border-radius: 15px;
   opacity: 0.7;
 }
@@ -66,14 +66,14 @@ window#waybar {
 #custom-appmenu,
 #user {
   margin: 10px 0px 5px 0px;
-  background: #5908ad;
-  color: #9260e1;
+  background: #567551;
+  color: #dae670;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
   border-top: solid;
   border-bottom: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
@@ -83,7 +83,7 @@ window#waybar {
   padding-right: 20px;
   border-radius: 20px 0px 0px 20px;
   border-left: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
@@ -91,7 +91,7 @@ window#waybar {
   border-radius: 0px 20px 20px 0px;
   padding-right: 20px;
   border-right: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
@@ -102,65 +102,44 @@ window#waybar {
 /* -----------------------------------------------------
  * Right
  * ----------------------------------------------------- */
+#pulseaudio,
 #clock,
 #network,
 #battery {
   margin: 10px 0px 5px 0px;
   padding-right: 10px;
-  background: #5908ad;
-  color: #9260e1;
+  background: #567551;
+  color: #dae670;
   font-size: 16px;
   font-weight: bold;
   border-top: solid;
   border-bottom: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
+/* module offcenter by on pixel vertically */
+#network {
+  padding-bottom: 1px;
+}
+
+/* -----------------------------------------------------
+ * Left and right modules for rounding (right modules)
+ * ----------------------------------------------------- */
 #clock {
   margin-right: 20px;
   border-radius: 0px 20px 20px 0px;
   border-right: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
 }
 
-/* -----------------------------------------------------
- * Battery
- * ----------------------------------------------------- */
 #battery {
   padding-left: 10px;
-  padding-right: 20px;
   border-radius: 20px 0px 0px 20px;
   border-left: solid;
-  border-color: #8e11ff;
+  border-color: #bcb660;
   border-width: 5px;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: #9260e1;
-  background-color: #5908ad;
-}
-
-@keyframes blink {
-  to {
-    background-color: #5908ad;
-    color: #ffcdff;
-  }
-}
-#battery.critical:not(.charging) {
-  background-color: #5908ad;
-  color: #5908ad;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */

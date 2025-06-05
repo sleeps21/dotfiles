@@ -23,7 +23,8 @@
 
     // Modules Right    
     "modules-right": [
-        "battery", 
+        "battery",
+        "pulseaudio",
         "network",
         "clock",
     ]

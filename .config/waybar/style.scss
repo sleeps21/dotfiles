@@ -7,8 +7,8 @@
  * General 
  * ----------------------------------------------------- */
 * {
-  font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family:
+    "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   border: none;
   border-radius: 0px;
 }
@@ -111,6 +111,8 @@ window#waybar {
 /* -----------------------------------------------------
  * Right
  * ----------------------------------------------------- */
+
+#pulseaudio,
 #clock,
 #network,
 #battery {
@@ -120,57 +122,32 @@ window#waybar {
   color: $color14;
   font-size: 16px;
   font-weight: bold;
-
   border-top: solid;
   border-bottom: solid;
   border-color: $color12;
   border-width: 5px;
 }
 
+/* module offcenter by on pixel vertically */
+#network {
+  padding-bottom: 1px;
+}
+
+/* -----------------------------------------------------
+ * Left and right modules for rounding (right modules)
+ * ----------------------------------------------------- */
 #clock {
   margin-right: 20px;
   border-radius: 0px 20px 20px 0px;
-
   border-right: solid;
   border-color: $color12;
   border-width: 5px;
 }
 
-/* -----------------------------------------------------
- * Battery
- * ----------------------------------------------------- */
 #battery {
   padding-left: 10px;
-  padding-right: 20px;
   border-radius: 20px 0px 0px 20px;
   border-left: solid;
   border-color: $color12;
   border-width: 5px;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: $color14;
-  background-color: $color1;
-}
-
-@keyframes blink {
-  to {
-    background-color: $color1;
-    color: $foreground;
-  }
-}
-
-#battery.critical:not(.charging) {
-  background-color: $color1;
-  color: $color1;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
 }
