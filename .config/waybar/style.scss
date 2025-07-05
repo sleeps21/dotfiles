@@ -33,7 +33,7 @@ window#waybar {
   opacity: 1;
   border: solid;
   border-radius: 20px;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -42,16 +42,16 @@ window#waybar {
   margin: 4px 3px;
   border-radius: 15px;
   border: 0px;
-  color: rgba($color10, 0.7);
+  color: rgba($color6, 0.7);
   min-width: 15px;
-  background-color: rgba($color10, 1);
+  background-color: rgba($color6, 1);
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: rgba($color14, 0);
-  background: rgba($color14, 1);
+  color: rgba($color7, 0);
+  background: rgba($color7, 1);
   border-radius: 15px;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
@@ -73,14 +73,14 @@ window#waybar {
 #user {
   margin: 10px 0px 5px 0px;
   background: $color1;
-  color: $color14;
+  color: $color7;
   font-size: 16px;
   font-weight: bold;
   opacity: 1;
 
   border-top: solid;
   border-bottom: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -91,7 +91,7 @@ window#waybar {
   border-radius: 20px 0px 0px 20px;
 
   border-left: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -100,7 +100,7 @@ window#waybar {
   padding-right: 20px;
 
   border-right: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -119,12 +119,12 @@ window#waybar {
   margin: 10px 0px 5px 0px;
   padding-right: 10px;
   background: $color1;
-  color: $color14;
+  color: $color7;
   font-size: 16px;
   font-weight: bold;
   border-top: solid;
   border-bottom: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -140,7 +140,7 @@ window#waybar {
   margin-right: 20px;
   border-radius: 0px 20px 20px 0px;
   border-right: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }
 
@@ -148,6 +148,6 @@ window#waybar {
   padding-left: 10px;
   border-radius: 20px 0px 0px 20px;
   border-left: solid;
-  border-color: $color12;
+  border-color: $color7;
   border-width: 5px;
 }

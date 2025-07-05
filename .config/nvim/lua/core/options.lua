@@ -69,5 +69,4 @@ vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
--- rust
-vim.g.rustfmt_autosave = 1
+opt.ttyfast = true

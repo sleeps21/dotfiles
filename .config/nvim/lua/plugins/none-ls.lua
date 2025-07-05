@@ -4,11 +4,10 @@ return {
     local null_ls = require("null-ls")
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-    -- Define the extra_args function for mypy
-    local function mypy_extra_args()
-      local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
-      return { "--python-executable", virtual .. "/bin/python3" }
-    end
+    -- local function mypy_extra_args()
+    --   local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
+    --   return { "--python-executable", virtual .. "/bin/python3" }
+    -- end
 
     -- Setup null-ls with the required sources
     null_ls.setup({
