@@ -1,4 +1,3 @@
--- LSP Support
 return {
   "neovim/nvim-lspconfig",
   event = "VeryLazy",
@@ -9,76 +8,63 @@ return {
   },
   config = function()
     require("mason").setup()
+
     require("mason-lspconfig").setup({
       ensure_installed = {
-        -- Shell
         "bashls",
-        -- Web development
         "html",
         "emmet_language_server",
         "cssls",
-        -- Formats
         "jsonls",
-        -- Lua development
         "lua_ls",
-        -- Python development
         "pyright",
         "ruff",
-        -- C/C++ development
         "clangd",
-
-        --Rust development
         "rust_analyzer",
       },
     })
 
     require("mason-tool-installer").setup({
       ensure_installed = {
-        -- Python
         "black",
         "debugpy",
         "mypy",
         "isort",
-        -- Django
         "djlint",
-        -- Lua
         "stylua",
       },
     })
 
     local lspconfig = require("lspconfig")
-    local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-    local lsp_attach = function(client, bufnr)
-      -- Create your keybindings here...
-    end
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    -- local function on_attach(client, bufnr)
+    --   -- Key bindings etc.
+    -- end
 
-    require("mason-lspconfig").setup_handlers({
-      function(server_name)
-        lspconfig[server_name].setup({
-          on_attach = lsp_attach,
-          capabilities = lsp_capabilities,
-        })
-      end,
-    })
+    -- Configure Lua LS more deeply *after* generic setup
 
-    -- Lua LSP settings
     lspconfig.lua_ls.setup({
+      capabilities = capabilities,
       settings = {
+        diagnostics = {
+          globals = { "vim" },
+        },
         Lua = {
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = { "vim" },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true), -- adds Neovim runtime
+            checkThirdParty = false,                           -- disables annoying prompts
+          },
+          telemetry = {
+            enable = false, -- privacy
           },
         },
       },
-    })
-
-    -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
-    local open_floating_preview = vim.lsp.util.open_floating_preview
+    }) -- Set border on all LSP floating windows
+    local orig_util = vim.lsp.util.open_floating_preview
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
       opts = opts or {}
-      opts.border = opts.border or "rounded" -- Set border to rounded
-      return open_floating_preview(contents, syntax, opts, ...)
+      opts.border = opts.border or "rounded"
+      return orig_util(contents, syntax, opts, ...)
     end
   end,
 }

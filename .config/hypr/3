@@ -3,11 +3,10 @@
 #----------------------------
 
 # $terminal       = alacritty
-$terminal         = /home/sleeps/.local/bin/ghostty
+$terminal         = kitty
 $browser          = firefox
-# $fileManager      = $terminal -e zsh -i -c lf
-$fileManager      = $terminal -e zsh -i -c yazi
-$music            = bash -c '$terminal -e zsh -i -c cmus & $terminal -e zsh -i -c cava'
+$fileManager      = kitty -e zsh -i -c lf
+$music            = bash -c 'kitty -e zsh -i -c cmus & kitty -e zsh -i -c cava'
 $menu             = rofi -show drun -theme ~/.cache/hellwal/rofi.rasi
 # $menu             = rofi -show drun
 $bluetoothManager = blueman-manager
@@ -36,18 +35,12 @@ bind = $mainMod, W, movecurrentworkspacetomonitor, +1
 bind = $mainMod, U, exec, bash -c 'query=$(rofi -dmenu -p "Search>" -theme ~/.cache/hellwal/rofi.rasi); [ -n "$query" ] && xdg-open "https://www.google.com/search?q=$(printf "%s" "$query" | jq -s -R -r @uri)"'
 bind = $mainMod, C, exec, rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.cache/hellwal/rofi.rasi
 bind = $mainMod SHIFT, J, togglesplit, # dwindle
-bind = $mainMod SHIFT, Q, exec, $HOME/.config/scripts/restart_quickshell.sh
-bind = $mainMod, P, exec, electron $HOME/palina
-
-
-# Volume
-bind = $mainMod, F2, exec, swayosd-client --output-volume lower
-bind = $mainMod, F3, exec, swayosd-client --output-volume raise
-bind = $mainMod, F4, exec, swayosd-client --input-volume mute-toggle
+bind = $mainMod, F3, exec, brightnessctl set +10%
+bind = $mainMod, F2, exec, brightnessctl set 10%-
 
 # Binds for windows
 bind = $mainMod, F, fullscreen,
-# bind = $mainMod, P, pseudo,
+bind = $mainMod, P, pseudo,
 bind = $mainMod, V, togglefloating,
 bind = $mainMod, T, togglefloating # Toggle active windows into floating mode
 bind = $mainMod SHIFT, T, exec, hyprctl dispatch workspaceopt allfloat # Toggle all windows into floating mode

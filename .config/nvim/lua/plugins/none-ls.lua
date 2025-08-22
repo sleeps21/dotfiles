@@ -23,7 +23,9 @@ return {
         null_ls.builtins.formatting.stylua,
 
         -- Python formatting
-        null_ls.builtins.formatting.black,
+        null_ls.builtins.formatting.black.with({
+          command = "/home/sleeps/.local/share/nvim/mason/bin/black",
+        }),
         null_ls.builtins.formatting.isort,
 
         -- Python diagnostics
