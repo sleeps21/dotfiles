@@ -3,8 +3,8 @@ local opt = vim.opt
 opt.relativenumber = true
 opt.number = true
 -- Tabs & Indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 8
+opt.shiftwidth = 8
 opt.expandtab = true
 opt.autoindent = true
 

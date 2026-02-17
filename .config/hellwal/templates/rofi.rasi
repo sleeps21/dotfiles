@@ -17,19 +17,20 @@
     selected-active-foreground: #%% foreground.hex %%;
     selected-normal-background: #%% color2.hex %%;
     selected-normal-foreground: #%% foreground.hex %%;
-    selected-urgent-background: #%% color3.hex %%;
+    selected-urgent-background: #%% color5.hex %%;
     selected-urgent-foreground: #%% foreground.hex %%;
 
     background-color: rgba(%% background.rgb %%, 0.0);
     background:       rgba(%% background.rgb %%, 0.0);    
     foreground: #%% foreground.hex %%;
-    border-color: #%% color7.hex %%;
+    border-color: #%% color5.hex %%;
     spacing: 2;
 }
 
 window {
-    background-color: rgba(%% background.rgb %%, 0.0);
-    border-color: #%% color7.hex %%;
+    transparency: "real";
+    background-color: rgba(%% background.rgb %%, 0.67);
+    border-color: #%% color5.hex %%;
     border: 3;
     padding: 2.5ch;
 }
@@ -95,7 +96,7 @@ element.normal.active {
 }
 
 element.selected.normal {
-    background-color: rgba(%% color7.rgb %%, 0.4);
+    background-color: rgba(%% color5.rgb %%, 0.4);
     text-color: @selected-normal-foreground;
 }
 

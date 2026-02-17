@@ -1,5 +1,5 @@
 
-# ~/.config/yazi/yazi.toml
 [flavor]
 theme = "~/.cache/hellwal/yazi-theme.toml"
+
 

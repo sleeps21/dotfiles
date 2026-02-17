@@ -2,3 +2,13 @@ Sxiv.background : #%% background.hex %%
 Sxiv.foreground : #%% color7.hex %%
 
 
+dwm.normbgcolor:      #%% color5.hex %%
+dwm.normfgcolor:      #%% foreground.hex %%
+dwm.normbordercolor:  #%% color0.hex %%
+
+dwm.selbgcolor:       #%% color5.hex %%
+dwm.selfgcolor:       #%% foreground.hex %%
+dwm.selbordercolor:   #%% color5.hex %%
+
+
+

@@ -3,10 +3,22 @@
 # Set wallpaper as background
 background=$1
 # wal -a 92 -i "$background" -n
-hellwal -i "$background" -q --check-contrast
-wal -i "$background" -q
-# hellwal --theme ./themes/gruvbox.hellwal
+:colorscheme colors
+
+hellwal -i "$background" -m
+# wal -i "$background" -q
+
+
+ext="${background##*.}"
+
+if [[ "${ext,,}" == "gif" ]]; then
+  # run mpvpaper for GIFs
+  pkill -x mpvpaper >/dev/null 2>&1 || true
+  mpvpaper ALL "$background" --mpv-optionis -o "loop 0"
+else
+pkill -x mpvpaper >/dev/null 2>&1 || true
 $HOME/.config/scripts/swww.sh "$background"
+fi
 $HOME/.config/scripts/launch_waybar.sh
 
 # Obsidian
