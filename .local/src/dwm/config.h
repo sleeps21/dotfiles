@@ -99,7 +99,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_u,      spawn,          SHCMD("query=$(rofi -dmenu -p 'Search>' -theme ~/.cache/hellwal/rofi.rasi); [ -n \"$query\" ] && xdg-open \"https://www.google.com/search?q=$(printf '%s' \"$query\" | jq -s -R -r @uri)\"") },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("networkmanager_dmenu") },
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.cache/hellwal/rofi.rasi") },
  	{ MODKEY,                       XK_w,      spawn,          SHCMD("dwm_choose_wallpaper") },
  	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dwm_random_wallpaper") },
 	{ MODKEY,                       XK_F3,     spawn,          SHCMD("blueman-manager") },
@@ -138,7 +137,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {1} }, 
+  { MODKEY|ControlMask,           XK_c,      killclient,     {.ui = 1} },  // kill unselect
+  { MODKEY|ShiftMask|ControlMask, XK_c,      killclient,     {.ui = 2} },  // killall
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[11]} },
