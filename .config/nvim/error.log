@@ -1,0 +1,22 @@
+[null-ls] failed to run generator: ....local/share/nvim/lazy/none-ls.nvim/lua/null-ls/loop.lua:165:
+"code/fizzbuzz.py" 9L, 183B written5:37 AMDiagnosed null-ls tool installation issue, sought clarificationDiagnosed null-ls tool installation issue, sought clarificationThe user is seeing a null-ls/none-ls error. This is a common issue - null-ls (none-ls) failing to run a generator usually means the underlying tool (like a linter/formatter like pylint, flake8, black, etc.) isn't installed or isn't in PATH.
+They probably just want to know what's causing it and how to fix it - but I don't have the full error message. Let me ask or give a general answer.DoneThe error got cut off — missing the actual error message after loop.lua:165:. But the most common cause is the underlying tool (formatter/linter like black, pylint, isort etc.) not being installed or not in $PATH.
+Run :NullLsInfo in nvim to see which sources are active and which are failing.null-ls
+    https://github.com/nvimtools/none-ls.nvim    Logging
+    * current level: warn
+    * path: /home/sleeps/.local/state/nvim/null-ls.log    Active source(s)
+    * name: black
+    * filetypes: python
+    * methods: formatting | range_formatting    Supported source(s)
+    * diagnostics: mypy | pydoclint | pylint | semgrep
+    * code_actions: refactoring
+    * formatting: black | blackd | isort | isortd | pyink | usort | yapfShow more5:38 AMDiagnosed missing or inaccessible Black formatter installationDiagnosed missing or inaccessible Black formatter installationBlack is active but probably not installed or not in PATH.DoneBlack is the active formatter — check if it's installed:
+shwhich black
+If not found, install it:
+shpip install black --break-system-packages
+Or via mason in nvim: :MasonInstall blackits only first time i write a file second time it works5:39 AMKnown race condition with null-ls/none-ls — the formatter process isn't ready on the first save. A common fix is adding a small delay or just ignoring it since it works on the second save.
+Or you can configure it to retry by adding on_attach with a slight delay in your none-ls config:
+luavim.defer_fn(function()
+    vim.lsp.buf.format()
+end, 500)
+But honestly if it only fails on the very first write after opening nvim and works fine after, 

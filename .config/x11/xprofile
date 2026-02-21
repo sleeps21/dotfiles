@@ -1,0 +1,25 @@
+#!/bin/sh
+# This file runs when a DM logs you into a graphical session.
+# If you use startx/xinit like a Chad, this file will also be sourced.
+
+# Display setup
+xrandr --dpi 96
+xrandr --output DVI-I-1-1 --mode 1920x1080 --right-of eDP-1
+
+# Wallpaper and theme
+feh --bg-scale ~/wallpaper/rosahakenkreuz.png &
+~/.config/scripts/change_theme_dwm.sh ~/wallpaper/rosahakenkreuz.png &
+
+# Compositor
+picom --config ~/.config/picom/picom.conf &
+
+# Autostart daemons
+autostart="dunst pipewire dwmblocks"
+for program in $autostart; do
+	pidof -sx "$program" || "$program" &
+done >/dev/null 2>&1
+
+# Status bar (delayed to let dwm initialize)
+(sleep 2 && dwmblocks) &
+
+dwm

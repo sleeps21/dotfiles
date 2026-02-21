@@ -1,10 +1,11 @@
 local opt = vim.opt
+
 -- Line Numbers
 opt.relativenumber = true
 opt.number = true
 -- Tabs & Indentation
-opt.tabstop = 8
-opt.shiftwidth = 8
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 
@@ -63,20 +64,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
-
-vim.filetype.add({
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
-})
-
-opt.ttyfast = true
-
--- Remove ~ characters in empty lines past the end of the buffer
-vim.opt.fillchars:append({ eob = " " })
-
--- Optional: also hide their color (in case your colorscheme overrides this)
-vim.cmd([[highlight EndOfBuffer guibg=NONE guifg=NONE]])
-
-vim.opt.shortmess:append("I")
-
-vim.o.lazyredraw = false
-vim.diagnostic.config({ virtual_text = true })

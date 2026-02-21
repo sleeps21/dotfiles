@@ -1,12 +1,15 @@
+-- Status line
+
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons",  -- fancy icons
+    "nvim-tree/nvim-web-devicons",    -- fancy icons
     "linrongbin16/lsp-progress.nvim", -- LSP loading progress
   },
 
   opts = {
     options = {
+
       icons_enabled = true,
       theme = "colors-nvim",
       component_separators = { left = "", right = "" },
@@ -17,7 +20,7 @@ return {
       },
       ignore_focus = {},
       always_divide_middle = true,
-      globalstatus = true, -- important
+      globalstatus = false,
       refresh = {
         statusline = 1000,
         tabline = 1000,
@@ -25,46 +28,53 @@ return {
       },
     },
     sections = {
-      lualine_a = {
-        "mode",
-        "branch",
-        "diagnostics",
-        { "filename", path = 1 },
-        "filetype", -- fixed typo
-        "progress",
-        "location",
-      },
+      lualine_a = { "mode" },
+      lualine_b = { "branch", "diff", "diagnostics" }, --"diff", "diagnostics" },
+      lualine_c = { { "filename", path = 1 } },
+      lualine_x = { "filetype" },                      -- "encoding", "fileformat",
+      lualine_y = { "progress" },
+      lualine_z = { "location" },
+    },
+    inactive_sections = {
+      lualine_a = {},
       lualine_b = {},
-      lualine_c = {},
-      lualine_x = {},
+      lualine_c = { "filename" },
+      lualine_x = { "location" },
       lualine_y = {},
       lualine_z = {},
     },
-    inactive_sections = {},
     tabline = {},
     winbar = {},
     inactive_winbar = {},
     extensions = {},
   },
-
-  config = function(_, opts)
-    vim.opt.laststatus = 3
-    require("lualine").setup(opts)
-
-    -- Hide per-window statusline in NvimTree and prevent dark bar
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "NvimTree",
-      callback = function()
-        vim.opt_local.statusline = " "
-        vim.wo.winhighlight = "StatusLine:NvimTreeNormal,StatusLineNC:NvimTreeNormal"
-      end,
-    })
-
-    -- Ensure transparent statusline in the tree
-    vim.api.nvim_set_hl(0, "NvimTreeStatusLine", { bg = "NONE", fg = "NONE" })
-    vim.api.nvim_set_hl(0, "NvimTreeStatusLineNC", { bg = "NONE", fg = "NONE" })
-
-    -- Optional, remove end-of-buffer tildes that look like a block
-    vim.opt.fillchars:append({ eob = " " })
-  end,
 }
+
+--   dependencies = {
+--     "nvim-tree/nvim-web-devicons",  -- fancy icons
+--     "linrongbin16/lsp-progress.nvim", -- LSP loading progress
+--   },
+--   opts = {
+--     options = {
+--       theme = "pywal16-nvim", -- "pywal16-nvim, auto, tokyonight, catppuccin, codedark, nord"
+--     },
+--     sections = {
+--       lualine_c = {
+--         {
+--           "filename",
+--           file_status = true, -- Displays file status (readonly status, modified status)
+--           newfile_status = false, -- Display new file status (new file means no write after created)
+--           path = 4,          -- 0: Just the filename
+--           -- 1: Relative path
+--           -- 2: Absolute path
+--           -- 3: Absolute path, with tilde as the home directory
+--           -- 4: Filename and parent dir, with tilde as the home directory
+--           symbols = {
+--             modified = "[+]", -- Text to show when the file is modified.
+--             readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
+--           },
+--         },
+--       },
+--     },
+--   },
+-- }
