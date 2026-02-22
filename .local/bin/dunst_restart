@@ -1,0 +1,3 @@
+#!/bin/bash
+killall dunst; dunst &
+notify-send "Restart" "dunst has been restarted"

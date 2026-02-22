@@ -97,7 +97,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "/home/sleeps/.cache/hellwal/rofi.rasi", NULL };
+// static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "/home/sleeps/.cache/hellwal/rofi.rasi", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
@@ -106,7 +107,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -e zsh -i -c yazi") },
-	{ MODKEY,                       XK_u,      spawn,          SHCMD("query=$(rofi -dmenu -p 'Search>' -theme ~/.cache/hellwal/rofi.rasi); [ -n \"$query\" ] && xdg-open \"https://www.google.com/search?q=$(printf '%s' \"$query\" | jq -s -R -r @uri)\"") },
+  { MODKEY,                       XK_u,      spawn,          SHCMD("query=$(dmenu -c -i -p 'Search>' < /dev/null); [ -n \"$query\" ] && xdg-open \"https://www.google.com/search?q=$(printf '%s' \"$query\" | jq -s -R -r @uri)\"") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("networkmanager_dmenu") },
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("dwm_choose_wallpaper") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("dwm_random_wallpaper") },

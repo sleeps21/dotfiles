@@ -1,14 +1,60 @@
-Sxiv.background : #%% background.hex %%
-Sxiv.foreground : #%% color7.hex %%
-
-
+# Nsxiv
+Nsxiv.window.background: #%% color1.hex %%
+Nsxiv.window.foreground: #%% color5.hex %%
+Nsxiv.bar.background:    #%% color5.hex %%
+Nsxiv.bar.foreground:    #%% foreground.hex %%
+Nsxiv.bar.font:          monospace:size=10
+Nsxiv.mark.foreground:   #%% color5.hex %%
+Nsxiv.window.alpha: 0.6
+# dwm 
 dwm.normbgcolor:      #%% color5.hex %%
 dwm.normfgcolor:      #%% foreground.hex %%
 dwm.normbordercolor:  #%% color0.hex %%
-
-dwm.selbgcolor:       #%% color5.hex %%
+dwm.selbgcolor:       #%% color2.hex %%
 dwm.selfgcolor:       #%% foreground.hex %%
 dwm.selbordercolor:   #%% color5.hex %%
 
+# Dmenu
+dmenu.background:    #%% color0.hex %%
+dmenu.foreground:    #%% foreground.hex %%
+dmenu.selbackground: #%% color5.hex %%
+dmenu.selforeground: #%% foreground.hex %%
 
-
+*foreground:        #%% foreground.hex %%
+*background:        #%% background.hex %%
+*.foreground:       #%% foreground.hex %%
+*.background:       #%% background.hex %%
+*.color0:  #%% color0.hex %%
+*color0:   #%% color0.hex %%
+*.color1:  #%% color1.hex %%
+*color1:   #%% color1.hex %%
+*.color2:  #%% color2.hex %%
+*color2:   #%% color2.hex %%
+*.color3:  #%% color3.hex %%
+*color3:   #%% color3.hex %%
+*.color4:  #%% color4.hex %%
+*color4:   #%% color4.hex %%
+*.color5:  #%% color5.hex %%
+*color5:   #%% color5.hex %%
+*.color6:  #%% color6.hex %%
+*color6:   #%% color6.hex %%
+*.color7:  #%% color7.hex %%
+*color7:   #%% color7.hex %%
+*.color8:  #%% color8.hex %%
+*color8:   #%% color8.hex %%
+*.color9:  #%% color9.hex %%
+*color9:   #%% color9.hex %%
+*.color10: #%% color10.hex %%
+*color10:  #%% color10.hex %%
+*.color11: #%% color11.hex %%
+*color11:  #%% color11.hex %%
+*.color12: #%% color12.hex %%
+*color12:  #%% color12.hex %%
+*.color13: #%% color13.hex %%
+*color13:  #%% color13.hex %%
+*.color14: #%% color14.hex %%
+*color14:  #%% color14.hex %%
+*.color15: #%% color15.hex %%
+*color15:  #%% color15.hex %%
+*.color66: #%% color0.hex %%
+*color66:  #%% color0.hex %%

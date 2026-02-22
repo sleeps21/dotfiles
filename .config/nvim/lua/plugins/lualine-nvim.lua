@@ -11,7 +11,7 @@ return {
     options = {
 
       icons_enabled = true,
-      theme = "colors-nvim",
+      theme = "nvim-hellwal-theme",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {

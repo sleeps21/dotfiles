@@ -1,0 +1,10 @@
+#!/bin/sh
+
+selection=$(nsxiv -to "$WALLPAPERDIR" | awk -F'/' '{print $NF}')
+if [ -n "$selection" ]; then
+  background="$WALLPAPERDIR/$selection"
+  dwm_change_theme "$background"
+else
+  echo "No selection made."
+  exit 1
+fi

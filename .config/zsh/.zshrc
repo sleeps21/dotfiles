@@ -1,7 +1,6 @@
 export PATH="$HOME/.fly/bin:$PATH"
-# Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
+source "$HOME/.config/shell/profile"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -13,7 +12,6 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in zsh plugins
-#
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -49,7 +47,7 @@ alias e='exit'
 alias python='python3'
 alias pip='pip3'
 alias sshpi='TERM=xterm-256color ssh sleeps-pi@192.168.178.7'
-alias dwmr='cd ~/dwm && sudo make clean install && kill -HUP $(pidof dwm)'
+
 # Truecolor
 export COLORTERM=truecolor
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -64,14 +62,13 @@ zinit light zsh-users/zsh-autosuggestions
 # Hellwal
 source ~/.cache/hellwal/variables.sh
 sh ~/.cache/hellwal/terminal.sh
-
 # Styles map
-typeset -gA ZSH_HIGHLIGHT_STYLES
+# typeset -gA ZSH_HIGHLIGHT_STYLES
 
 # Use hex from wal
 
-# source pywal colors
-. "${HOME}/.cache/wal/colors.sh"
+# # source pywal colors
+# . "${HOME}/.cache/wal/colors.sh"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=${foreground}"  # try color8 or color7 with lower contrast
 ZSH_HIGHLIGHT_STYLES[default]="fg=${color3}"
@@ -99,25 +96,8 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]="fg=${color1},bold"
 ZSH_HIGHLIGHT_STYLES[foreign-command]="fg=${color4},bold"
 
 
-
-# Created by `pipx` on 2025-05-30 23:34:16
-export PATH="$PATH:/home/sleeps/.local/bin"
-
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/sleeps/.dart-cli-completion/zsh-config.zsh ]] && . /home/sleeps/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'micromamba shell init' !!
-export MAMBA_EXE='/home/sleeps/RobustVideoMatting/exec "$SHELL"/micromamba';
-export MAMBA_ROOT_PREFIX='/home/sleeps/micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<

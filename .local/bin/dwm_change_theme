@@ -1,0 +1,21 @@
+#!/bin/sh
+
+background=$1
+feh --bg-scale "$background"
+# wal -a 92 -i "$background" -n
+hellwal -i "$background" -q --check-contrast
+
+# Xresources
+xrdb -merge "$HOME/.Xresources"
+
+# Rofi
+sass $HOME/.config/wofi/style.scss $HOME/.config/wofi/style.css
+
+# Dunst
+dunst_restart
+
+# Nvim
+fd "nvim\..*\.0" "$XDG_RUNTIME_DIR" | xargs -I {} nvim --server {} --remote-send ":colorscheme hellwal<CR>"
+
+# Restart dwm last
+pkill -HUP dwm

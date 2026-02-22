@@ -4,8 +4,8 @@
 export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 
 export EDITOR="nvim"
-export TERMINAL="ghostty"
-export TERMINAL_PROG="ghostty"
+export TERMINAL="st"
+export TERMINAL_PROG="st"
 export BROWSER="firefox"
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -14,8 +14,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/history"
-
-[ ! -f "$XDG_CONFIG_HOME/shell/shortcutrc" ] && setsid -f shortcuts >/dev/null 2>&1
+export WALLPAPERDIR="$HOME/Pictures/wallpaper"
 
 # Start graphical server on user's current tty if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"

@@ -1,0 +1,13 @@
+# German - General
+https://www.tagesschau.de/xml/rss2 "~Tagesschau" politik
+https://www.faz.net/rss/aktuell/ "~FAZ" politik
+
+# German - Tech
+https://netzpolitik.org/feed/ "~Netzpolitik" tech politik
+
+# International - Finance
+# https://www.ft.com/?format=rss "~Financial Times" finanzen
+
+# International - Tech
+https://feeds.arstechnica.com/arstechnica/index "~Ars Technica" tech
+https://hnrss.org/frontpage "~Hacker News" tech

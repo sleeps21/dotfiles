@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ -d "$WALLPAPERDIR" ]; then
+    random_background=$(find "$WALLPAPERDIR" -type f \( -name '*.jpg' -o -name '*.png' \) | shuf -n 1)
+fi
+dwm_change_theme "$random_background"
