@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
-
-static char *fontfallbacks[] = {
+#define MAXFONTS 10
+static char *fontfallbacks[MAXFONTS] = {
 	"dejavu sans",
 	"roboto",
 	"ubuntu",
