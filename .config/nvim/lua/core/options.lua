@@ -10,7 +10,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- Line Wrapping
-opt.wrap = false
+opt.wrap = true
 
 -- Clipboard
 opt.clipboard:append("unnamedplus")

@@ -1,24 +1,50 @@
 # Nsxiv
 Nsxiv.window.background: #%% color1.hex %%
-Nsxiv.window.foreground: #%% color5.hex %%
-Nsxiv.bar.background:    #%% color5.hex %%
+Nsxiv.window.foreground: #%% color4.hex %%
+Nsxiv.bar.background:    #%% color4.hex %%
 Nsxiv.bar.foreground:    #%% foreground.hex %%
 Nsxiv.bar.font:          monospace:size=10
-Nsxiv.mark.foreground:   #%% color5.hex %%
-Nsxiv.window.alpha: 0.6
+Nsxiv.mark.foreground:   #%% color4.hex %%
+Nsxiv.window.alpha: 0.7
+
 # dwm 
-dwm.normbgcolor:      #%% color5.hex %%
+dwm.normbgcolor:      #%% color4.hex %%
 dwm.normfgcolor:      #%% foreground.hex %%
 dwm.normbordercolor:  #%% color0.hex %%
-dwm.selbgcolor:       #%% color2.hex %%
+dwm.selbgcolor:       #%% color4.hex %%
 dwm.selfgcolor:       #%% foreground.hex %%
-dwm.selbordercolor:   #%% color5.hex %%
+dwm.selbordercolor:   #%% color4.hex %%
 
 # Dmenu
 dmenu.background:    #%% color0.hex %%
 dmenu.foreground:    #%% foreground.hex %%
-dmenu.selbackground: #%% color5.hex %%
+dmenu.selbackground: #%% color4.hex %%
 dmenu.selforeground: #%% foreground.hex %%
+
+# sent
+# sent.font
+sent.foreground: #%% color4.hex %%
+sent.background: #%% background.hex %%
+# st
+st.foreground: #%% foreground.hex %%
+st.background: #%% background.hex %%
+st.color0:     #%% color0.hex %%
+st.color1:     #%% color1.hex %%
+st.color2:     #%% color2.hex %%
+st.color3:     #%% color3.hex %%
+st.color4:     #%% color4.hex %%
+st.color4:     #%% color4.hex %%
+st.color6:     #%% color6.hex %%
+st.color7:     #%% color7.hex %%
+st.color8:     #%% color8.hex %%
+st.color9:     #%% color9.hex %%
+st.color10:    #%% color10.hex %%
+st.color11:    #%% color11.hex %%
+st.color12:    #%% color12.hex %%
+st.color13:    #%% color13.hex %%
+st.color14:    #%% color14.hex %%
+st.color15:    #%% color15.hex %%
+st.cursorColor: #%% foreground.hex %%
 
 *foreground:        #%% foreground.hex %%
 *background:        #%% background.hex %%
@@ -34,8 +60,8 @@ dmenu.selforeground: #%% foreground.hex %%
 *color3:   #%% color3.hex %%
 *.color4:  #%% color4.hex %%
 *color4:   #%% color4.hex %%
-*.color5:  #%% color5.hex %%
-*color5:   #%% color5.hex %%
+*.color4:  #%% color4.hex %%
+*color4:   #%% color4.hex %%
 *.color6:  #%% color6.hex %%
 *color6:   #%% color6.hex %%
 *.color7:  #%% color7.hex %%

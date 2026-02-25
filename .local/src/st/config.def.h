@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=17:antialias=true:autohint=true";
+static char *font = "UnifrakturMaguntia:style=Book:size=12";
+// static char *font = "mono:pixelsize=17:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*

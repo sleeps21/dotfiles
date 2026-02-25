@@ -1,4 +1,3 @@
-export PATH="$HOME/.fly/bin:$PATH"
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "$HOME/.config/shell/profile"
 
@@ -10,8 +9,6 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-
-# Add in zsh plugins
 
 # Load completions
 autoload -Uz compinit && compinit

@@ -2208,7 +2208,17 @@ xrdb_load(void)
 
 		XRESOURCE_LOAD_STRING("foreground", colorname[defaultfg]);
 		XRESOURCE_LOAD_STRING("background", colorname[defaultbg]);
-		XRESOURCE_LOAD_STRING("cursorColor", colorname[defaultcs])
+{
+    char colorres[16], colorres2[16];
+    for (int i = 0; i < 16; i++) {
+        snprintf(colorres, sizeof(colorres), "st.color%d", i);
+        snprintf(colorres2, sizeof(colorres2), "*.color%d", i);
+        if (!XrmGetResource(xrdb, colorres, colorres, &type, &ret))
+            XrmGetResource(xrdb, colorres2, colorres2, &type, &ret);
+        if (ret.addr)
+            colorname[i] = strdup(ret.addr);
+    }
+}		XRESOURCE_LOAD_STRING("cursorColor", colorname[defaultcs])
 		else {
 		  // this looks confusing because we are chaining off of the if
 		  // in the macro. probably we should be wrapping everything blocks
